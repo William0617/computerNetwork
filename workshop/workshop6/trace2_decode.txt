@@ -1,0 +1,917 @@
+---------------------------------------------------------------------------
+Packet 1
+TIME:	10:48:02.242875
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> iris hlen=20 TOS=00 dgramlen=453 id=59E3
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=CB91
+ TCP:	port 1484 -> 8080 seq=0971277530 ack=3818609253
+	hlen=20 (data=413) UAPRSF=011000 wnd=17520 cksum=D738 urg=0
+DATA:	GET http://www.cs.adfa.edu.au/teaching/studinfo/osrts/index.
+	html HTTP/1.0.
+	Referer: http://minnie.tuhs.org/wkthome.html.
+	Proxy-Connection: Keep-Alive.
+	User-Agent: Mozilla/4.76 [en] (X11; U; Linux 2.2.12 i386).
+	Pragma: no-cache.
+	Host: www.cs.adfa.edu.au.
+	Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg,
+	 image/png, */*.
+	Accept-Encoding: gzip.
+	Accept-Language: en.
+	Accept-Charset: iso-8859-1,*,utf-8.
+	.
+	
+---------------------------------------------------------------------------
+Packet 2
+TIME:	10:48:02.243143 (0.000268)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> iris hlen=20 TOS=00 dgramlen=40 id=59E4
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=CD2D
+ TCP:	port 1484 -> 8080 seq=0971277943 ack=3818609253
+	hlen=20 (data=0) UAPRSF=010001 wnd=17520 cksum=33EC urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 3
+TIME:	10:48:02.243351 (0.000208)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> iris hlen=20 TOS=00 dgramlen=44 id=59E5
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=CD28
+ TCP:	port 1486 -> 8080 seq=2421587432 ack=0000000000
+	hlen=24 (data=0) UAPRSF=000010 wnd=16384 cksum=10CB urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 4
+TIME:	10:48:02.244066 (0.000715)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=40 id=0000
+	MF/DF=0/1 frag=0 TTL=254 proto=TCP cksum=6911
+ TCP:	port 8080 -> 1484 seq=3818609253 ack=0000000000
+	hlen=20 (data=0) UAPRSF=000100 wnd=0 cksum=38C5 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 5
+TIME:	10:48:02.244128 (0.000062)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=40 id=0000
+	MF/DF=0/1 frag=0 TTL=254 proto=TCP cksum=6911
+ TCP:	port 8080 -> 1484 seq=3818609253 ack=0000000000
+	hlen=20 (data=0) UAPRSF=000100 wnd=0 cksum=38C5 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 6
+TIME:	10:48:02.244195 (0.000067)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=44 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=280E
+ TCP:	port 8080 -> 1486 seq=3977492087 ack=2421587433
+	hlen=24 (data=0) UAPRSF=010010 wnd=5840 cksum=965E urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 7
+TIME:	10:48:02.244288 (0.000093)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> iris hlen=20 TOS=00 dgramlen=40 id=59E6
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=CD2B
+ TCP:	port 1486 -> 8080 seq=2421587433 ack=3977492088
+	hlen=20 (data=0) UAPRSF=010000 wnd=17520 cksum=807B urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 8
+TIME:	10:48:02.245500 (0.001212)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> iris hlen=20 TOS=00 dgramlen=453 id=59E7
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=CB8D
+ TCP:	port 1486 -> 8080 seq=2421587433 ack=3977492088
+	hlen=20 (data=413) UAPRSF=011000 wnd=17520 cksum=222A urg=0
+DATA:	GET http://www.cs.adfa.edu.au/teaching/studinfo/osrts/index.
+	html HTTP/1.0.
+	Referer: http://minnie.tuhs.org/wkthome.html.
+	Proxy-Connection: Keep-Alive.
+	User-Agent: Mozilla/4.76 [en] (X11; U; Linux 2.2.12 i386).
+	Pragma: no-cache.
+	Host: www.cs.adfa.edu.au.
+	Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg,
+	 image/png, */*.
+	Accept-Encoding: gzip.
+	Accept-Language: en.
+	Accept-Charset: iso-8859-1,*,utf-8.
+	.
+	
+---------------------------------------------------------------------------
+Packet 9
+TIME:	10:48:02.246243 (0.000743)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=40 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=2812
+ TCP:	port 8080 -> 1486 seq=3977492088 ack=2421587846
+	hlen=20 (data=0) UAPRSF=010000 wnd=6432 cksum=AA2E urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 10
+TIME:	10:48:02.636490 (0.390247)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=1500 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=225E
+ TCP:	port 8080 -> 1486 seq=3977492088 ack=2421587846
+	hlen=20 (data=1460) UAPRSF=010000 wnd=6432 cksum=B98C urg=0
+DATA:	HTTP/1.0 200 OK.
+	Date: Tue, 30 Oct 2001 00:47:45 GMT.
+	Server: Apache/1.3.12 (Unix).
+	Last-Modified: Mon, 30 Apr 2001 02:16:06 GMT.
+	ETag: "1594a-3519-3aeccae6".
+	Accept-Ranges: bytes.
+	Content-Length: 13593.
+	Content-Type: text/html.
+	X-Cache: MISS from proxy1.syd.connect.com.au.
+	X-Cache: MISS from bondproxy.bond.edu.au.
+	Proxy-Connection: keep-alive.
+	.
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+	
+	<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+	original version by:  Nikos Drakos, CBLU, University of Leed
+	s
+	* revised and updated by:  Marcus Hennecke, Ross Moore, Herb
+	 Swan
+	* with significant contributions from:
+	  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+	<HTML>
+	<HEAD>
+	<TITLE>Operating Systems</TITLE>
+	<META NAME="description" CONTENT="Operating Systems">
+	<META NAME="keywords" CONTENT="os-masters">
+	<META NAME="resource-type" CONTENT="document">
+	<META NAME="distribution" CONTENT="global">
+	
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=
+	iso-8859-1">
+	<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+	<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+	
+	<LINK REL="STYLESHEET" HREF="os-masters.css">
+	
+	</HEAD>
+	
+	<BODY BGCOLOR="#ffffff">
+	<BR> <P>
+	
+	<!--End of Navigation Panel-->
+	
+	<P>
+	<DIV ALIGN="CENTER">
+	<FONT SIZE="+3"><B>Guide to Students for
+	<BR>
+	ACSC.7325 Operating Systems
+	<BR></B></FONT>
+	</DIV>
+	<P><P>
+	<BR>
+	<DIV ALIGN="CENTER"><FONT SIZE="+2">Dr. Warren Toomey
+	<BR>
+	School of Computer Science</FONT>
+	
+	</DI
+---------------------------------------------------------------------------
+Packet 11
+TIME:	10:48:02.636584 (0.000094)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=101 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=27D5
+ TCP:	port 8080 -> 1486 seq=3977493548 ack=2421587846
+	hlen=20 (data=61) UAPRSF=011000 wnd=6432 cksum=C1B2 urg=0
+DATA:	V>
+	
+	<P>
+	
+	<UL>
+	<LI><A NAME="tex2html1"
+	  HREF="course_news.htm
+---------------------------------------------------------------------------
+Packet 12
+TIME:	10:48:02.637406 (0.000822)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> iris hlen=20 TOS=00 dgramlen=40 id=59E8
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=CD29
+ TCP:	port 1486 -> 8080 seq=2421587846 ack=3977493609
+	hlen=20 (data=0) UAPRSF=010000 wnd=17283 cksum=79DA urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 13
+TIME:	10:48:02.649416 (0.012010)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> iris hlen=20 TOS=00 dgramlen=411 id=59E9
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=CBB5
+ TCP:	port 1485 -> 8080 seq=2113094951 ack=3810290070
+	hlen=20 (data=371) UAPRSF=011000 wnd=17520 cksum=4EDB urg=0
+DATA:	GET http://www.cs.adfa.edu.au/teaching/studinfo/osrts/os-mas
+	ters.css HTTP/1.0.
+	Proxy-Connection: Keep-Alive.
+	User-Agent: Mozilla/4.76 [en] (X11; U; Linux 2.2.12 i386).
+	Pragma: no-cache.
+	Host: www.cs.adfa.edu.au.
+	Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg,
+	 image/png, */*.
+	Accept-Encoding: gzip.
+	Accept-Language: en.
+	Accept-Charset: iso-8859-1,*,utf-8.
+	.
+	
+---------------------------------------------------------------------------
+Packet 14
+TIME:	10:48:02.650122 (0.000706)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=40 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=2812
+ TCP:	port 8080 -> 1485 seq=3810290070 ack=2113095322
+	hlen=20 (data=0) UAPRSF=010000 wnd=8576 cksum=43F8 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 15
+TIME:	10:48:02.675286 (0.025164)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=1488 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=226A
+ TCP:	port 8080 -> 1486 seq=3977493609 ack=2421587846
+	hlen=20 (data=1448) UAPRSF=011000 wnd=6432 cksum=9DAE urg=0
+DATA:	l">Course News (last update:
+	30th April, 2001)</A>
+	</LI>
+	<LI><A NAME="tex2html2"
+	  HREF="http://www.webct.adfa.edu.au/SCRIPT/ACSC7325/scripts
+	/serve_home">WebCT Area: Submissions</A>
+	and <A NAME="tex2html3"
+	  HREF="marks.html">Marks</A>
+	</LI>
+	<LI><A NAME="tex2html4"
+	  HREF="essay_suggestions.html">Some Suggestions for Essay T
+	opics</A>
+	</LI>
+	<LI><A NAME="tex2html5"
+	  HREF="PastExams/pastpapers.html">Past Session Exams and La
+	b Tests</A>
+	<P>
+	</LI>
+	<LI><A NAME="tex2html6"
+	  HREF="Lectures/index.html">Lecture Notes</A>
+	</LI>
+	<LI><A NAME="tex2html7"
+	  HREF="Tutes/index.html">Tutorials</A>
+	</LI>
+	<LI><A NAME="tex2html8"
+	  HREF="Labs/index.html">Lab Notes</A>
+	</LI>
+	<LI><A NAME="tex2html9"
+	  HREF="Assignments/index.html">Small Assignments</A>
+	</LI>
+	<LI><A NAME="tex2html10"
+	  HREF="Questions/index.html">Short Questions</A>
+	<P>
+	</LI>
+	<LI><A NAME="tex2html11"
+	  HREF="writing_essays.html">Information on Writing Essays</
+	A>
+	</LI>
+	<LI><A NAME="tex2html12"
+	  HREF="Unix_Concepts/concepts.html">Introductory Help on Us
+	ing UNIX</A>
+	<P>
+	</LI>
+	<LI><A NAME="tex2html13"
+	  HREF="webrefs.html">Useful Web References</A>
+	</LI>
+	<LI><A NAME="tex2html14"
+	  HREF="unix_nt_design.html">Information on the Design of Un
+	ix</A>
+	</LI>
+	</UL>
+	<H1><A NAME="SECTION00010000000000000000">
+	Overview</A>
+	</H1>
+	
+	<P>
+	The Operating Systems masters course gives an introduction t
+	o the design of
+	computer operating systems; these provide an abstract interf
+	ace to the
+	hardware for the
+---------------------------------------------------------------------------
+Packet 16
+TIME:	10:48:02.774301 (0.099015)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> iris hlen=20 TOS=00 dgramlen=40 id=59EA
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=CD27
+ TCP:	port 1486 -> 8080 seq=2421587846 ack=3977495057
+	hlen=20 (data=0) UAPRSF=010000 wnd=17520 cksum=7345 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 17
+TIME:	10:48:02.815970 (0.041669)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=1488 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=226A
+ TCP:	port 8080 -> 1486 seq=3977495057 ack=2421587846
+	hlen=20 (data=1448) UAPRSF=011000 wnd=6432 cksum=498E urg=0
+DATA:	 user, and manage the system's resources for the user.
+	The handbook entry is:
+	
+	<P>
+	<BLOCKQUOTE>
+	Investigates the design, implementation, operation and manag
+	ement of
+	operating systems, with UNIX and Windows NT as example syste
+	ms.
+	History of Operating Systems. Processes: process environment
+	; system
+	calls; process control blocks; pre-emption and scheduling.
+	Input/Output: devices and the machine architecture; device d
+	rivers;
+	interrupt handling; device-independent operations. Memory Ma
+	nagement:
+	partitions; paged architecture; design issues. Virtual Memor
+	y
+	Management: paging; paging algorithms; page sharing. File Sy
+	stems:
+	application interface; disk layout; performance and reliabil
+	ity
+	issues. Interprocess Communication and Synchronisation: crit
+	ical
+	sections; solutions; semaphores; synchronisation with the op
+	erating
+	system. Operating System Security. Operating System Performa
+	nce. Threads.
+	
+	</BLOCKQUOTE>
+	
+	<P>
+	
+	<H1><A NAME="SECTION00020000000000000000">
+	Lecturer and Contact Times</A>
+	</H1>
+	
+	<P>
+	<DL>
+	<DT><STRONG>Lecturer:</STRONG></DT>
+	<DD>Warren Toomey,
+	<BR>
+	Room 119 Computer Science.
+	<BR>
+	Phone: 6268 8050, Fax: 6268 8581
+	<BR>
+	E-mail: <A NAME="tex2html15"
+	  HREF="mailto:wkt@cs.adfa.edu.au">wkt@cs.adfa.edu.au</A>
+	</DD>
+	<DT><STRONG>Tutorials:</STRONG></DT>
+	<DD>Wednesday 6pm - 7pm LT6, alternate weeks
+	</DD>
+	<DT><STRONG>Labs:</STRONG></DT>
+	<DD>Wednesday 4pm - 5pm in Computer Science, alternate weeks
+	.
+	<BR>
+	The room allocation is not yet f
+---------------------------------------------------------------------------
+Packet 18
+TIME:	10:48:02.883877 (0.067907)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=1500 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=225E
+ TCP:	port 8080 -> 1486 seq=3977496505 ack=2421587846
+	hlen=20 (data=1460) UAPRSF=010000 wnd=6432 cksum=230C urg=0
+DATA:	inalised.
+		There <B>will</B> be another lab session in the daytime for
+	 the
+		full-time students.
+	</DD>
+	<DT><STRONG>Lectures:</STRONG></DT>
+	<DD>Wednesday 4pm - 7pm LT6.
+	</DD>
+	</DL>
+	
+	<P>
+	
+	<H1><A NAME="SECTION00030000000000000000">
+	Textbook and Other Resources</A>
+	</H1>
+	You may choose from one of the following textbooks for the c
+	ourse:
+	
+	<P>
+	
+	<UL>
+	<LI><A NAME="tex2html16"
+	  HREF="http://WilliamStallings.com/OS4e.html"><I>Operating 
+	Systems, 4th Ed.</I></A>
+	William Stallings, 2001,
+	<BR>
+	Prentice-Hall, ISBN&nbsp;0-13-032986-X, <B>&nbsp;&nbsp;&nbsp
+	;OR</B>
+	</LI>
+	<LI><A NAME="tex2html17"
+	  HREF="http://www.phptr.com/ptrbooks/esm_0136386776.html"><
+	I>Operating Systems: Design &amp; Implementation, 2nd Ed.</I
+	></A>,
+	
+	Andrew S. Tanenbaum, 1997,
+	<BR>
+	Prentice-Hall, ISBN&nbsp;0-13-630195-9.
+	</LI>
+	</UL>
+	
+	<P>
+	Other reference sources include:
+	
+	<P>
+	
+	<UL>
+	<LI><I>Byte Magazine</I>, <I>LAN Magazine</I>,
+	<I>Australian Personal Computing</I> etc.
+	
+	<P>
+	</LI>
+	<LI>The Yahoo Web Page on Operating Systems at
+	<BR><A NAME="tex2html18"
+	  HREF="http://dir.yahoo.com/Computers_and_Internet/Software
+	/Operating_Systems/">http://dir.yahoo.com/Computers_and_Inte
+	rnet/Software/Operating_Systems/</A>
+	<P>
+	</LI>
+	<LI><A NAME="tex2html19"
+	  HREF="webrefs.html">Useful Web References</A>
+	</LI>
+	</UL>
+	
+	<P>
+	See me for further references.
+	
+	<H1><A NAME="SECTION00040000000000000000">
+	Course Timetable</A>
+	</H1>
+	
+	<P>
+	<DIV ALIGN="CENTER">
+	<TABLE CELLPADDING=3 BORDER="1">
+	<TR><TD ALIGN="CENTER" CO
+---------------------------------------------------------------------------
+Packet 19
+TIME:	10:48:02.884302 (0.000425)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> iris hlen=20 TOS=00 dgramlen=40 id=59EB
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=CD26
+ TCP:	port 1486 -> 8080 seq=2421587846 ack=3977497965
+	hlen=20 (data=0) UAPRSF=010000 wnd=16060 cksum=6D9D urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 20
+TIME:	10:48:02.885101 (0.000799)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=1500 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=225E
+ TCP:	port 8080 -> 1486 seq=3977497965 ack=2421587846
+	hlen=20 (data=1460) UAPRSF=010000 wnd=6432 cksum=F0E4 urg=0
+DATA:	LSPAN=1><B>Week</B></TD>
+	<TD ALIGN="CENTER" COLSPAN=1><B>Date</B></TD>
+	<TD ALIGN="CENTER" COLSPAN=1><B>Lecture Topics</B></TD>
+	<TD ALIGN="CENTER" COLSPAN=1><B>Tute/Lab</B></TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">1</TD>
+	<TD ALIGN="LEFT">7th March</TD>
+	<TD ALIGN="LEFT">Introduction, System Architecture</TD>
+	<TD ALIGN="LEFT">&nbsp;</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">2</TD>
+	<TD ALIGN="LEFT">14th March</TD>
+	<TD ALIGN="LEFT">OS History</TD>
+	<TD ALIGN="LEFT">Tute - system architecture &amp; API</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">3</TD>
+	<TD ALIGN="LEFT">21st March</TD>
+	<TD ALIGN="LEFT">Processes</TD>
+	<TD ALIGN="LEFT">Lab - processes</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">4</TD>
+	<TD ALIGN="LEFT">28th March</TD>
+	<TD ALIGN="LEFT">Processes</TD>
+	<TD ALIGN="LEFT">Tute - process API</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">5</TD>
+	<TD ALIGN="LEFT">4th April</TD>
+	<TD ALIGN="LEFT">Input/Output</TD>
+	<TD ALIGN="LEFT">Lab - I/O</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">6</TD>
+	<TD ALIGN="LEFT">11th April</TD>
+	<TD ALIGN="LEFT">Input/Output, Memory Management</TD>
+	<TD ALIGN="LEFT">No tute</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">7</TD>
+	<TD ALIGN="LEFT">18th April</TD>
+	<TD ALIGN="LEFT">Virtual Memory Management</TD>
+	<TD ALIGN="LEFT">Tute - memory API</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">8</TD>
+	<TD ALIGN="LEFT">25th April</TD>
+	<TD ALIGN="LEFT"><I>Lost due to Anzac Day</I></TD>
+	<TD ALIGN="LEFT">&nbsp;</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">9</TD>
+	<TD ALIGN="LEFT">2nd May</TD>
+	<TD ALIGN="LEFT">File Systems</TD>
+	<TD ALIGN="
+---------------------------------------------------------------------------
+Packet 21
+TIME:	10:48:02.885506 (0.000405)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> iris hlen=20 TOS=00 dgramlen=40 id=59EC
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=CD25
+ TCP:	port 1486 -> 8080 seq=2421587846 ack=3977499425
+	hlen=20 (data=0) UAPRSF=010000 wnd=17520 cksum=6235 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 22
+TIME:	10:48:02.887023 (0.001517)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=1500 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=225E
+ TCP:	port 8080 -> 1486 seq=3977499425 ack=2421587846
+	hlen=20 (data=1460) UAPRSF=011000 wnd=6432 cksum=F7D1 urg=0
+DATA:	LEFT">Lab - memory management</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">10</TD>
+	<TD ALIGN="LEFT">23rd May</TD>
+	<TD ALIGN="LEFT">File System Design</TD>
+	<TD ALIGN="LEFT">Tute - file API</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">11</TD>
+	<TD ALIGN="LEFT">30th May</TD>
+	<TD ALIGN="LEFT">IPC &amp; Synchronisation</TD>
+	<TD ALIGN="LEFT">Lab - file systems</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">12</TD>
+	<TD ALIGN="LEFT">6th June</TD>
+	<TD ALIGN="LEFT">Threads</TD>
+	<TD ALIGN="LEFT">Tute - file API</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">13</TD>
+	<TD ALIGN="LEFT">13th June</TD>
+	<TD ALIGN="LEFT">Windows NT, other topics</TD>
+	<TD ALIGN="LEFT">Lab - security</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">14</TD>
+	<TD ALIGN="LEFT">20th June</TD>
+	<TD ALIGN="LEFT">Summary and Conclusion</TD>
+	<TD ALIGN="LEFT">Lab test</TD>
+	</TR>
+	</TABLE>
+	</DIV>
+	
+	<P>
+	<B>N.B</B> Note that the lecture in Week 8 is lost due to An
+	zac Day.
+	
+	<P>
+	Each lecture will be followed by a tutorial or a laboratory;
+	 these will
+	usually be related to the material in the previous two lectu
+	res. Your
+	competency in the labs will be assessed at the end of the co
+	urse in the
+	laboratory test.
+	
+	<P>
+	
+	<H1><A NAME="SECTION00050000000000000000">
+	Assessment</A>
+	</H1>
+	
+	<P>
+	<DIV ALIGN="CENTER">
+	<TABLE CELLPADDING=3 BORDER="1">
+	<TR><TD ALIGN="CENTER" COLSPAN=1><B>Assessable Work</B></TD>
+	<TD ALIGN="LEFT"><B>Due Date</B></TD>
+	<TD ALIGN="LEFT"><B>Worth</B></TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">Small Assignment 1</TD>
+	<TD ALIGN="LEFT">4th April</TD>
+	<TD ALIGN="LEFT">5%
+---------------------------------------------------------------------------
+Packet 23
+TIME:	10:48:02.888258 (0.001235)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=1500 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=225E
+ TCP:	port 8080 -> 1486 seq=3977500885 ack=2421587846
+	hlen=20 (data=1460) UAPRSF=011000 wnd=6432 cksum=0D8D urg=0
+DATA:	</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">Small Assignment 2</TD>
+	<TD ALIGN="LEFT">26th April</TD>
+	<TD ALIGN="LEFT">5%</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">Small Assignment 3</TD>
+	<TD ALIGN="LEFT">24th May</TD>
+	<TD ALIGN="LEFT">5%</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">Small Assignment 4</TD>
+	<TD ALIGN="LEFT">14th June</TD>
+	<TD ALIGN="LEFT">5%</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">Laboratory test</TD>
+	<TD ALIGN="LEFT">20th June</TD>
+	<TD ALIGN="LEFT">20%</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">5,000 word essay</TD>
+	<TD ALIGN="LEFT">COB 24th June</TD>
+	<TD ALIGN="LEFT">30%</TD>
+	</TR>
+	<TR><TD ALIGN="LEFT">Examination</TD>
+	<TD ALIGN="LEFT">Exam period</TD>
+	<TD ALIGN="LEFT">30%</TD>
+	</TR>
+	</TABLE>
+	</DIV>
+	
+	<P>
+	The course is divided into two components. 50% of the assess
+	ment is
+	<B>assignment</B> work: one essay and four short-answer hand
+	-ins. 50% of the
+	assessment is <B>exams</B>: a lab test and an end-of session
+	 examination.
+	This Masters course has a 40% rule: if you do not achieve 40
+	% or more in
+	either of the assignment or exam components, then you will a
+	utomatically
+	fail the course.
+	
+	<P>
+	You will have access to copies of previous end-of-session ex
+	aminations and
+	previous lab tests at the beginning of the course. I urge yo
+	u to attempt these
+	questions and hand them in to be marked. This will give you 
+	feedback on your
+	progress through the course.
+	
+	<P>
+	The due date for the essay and short-answer assignments are 
+	<B>hard</B> dates.
+	You will need to supply a good reason if an extensi
+---------------------------------------------------------------------------
+Packet 24
+TIME:	10:48:02.888753 (0.000495)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> iris hlen=20 TOS=00 dgramlen=40 id=59ED
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=CD24
+ TCP:	port 1486 -> 8080 seq=2421587846 ack=3977502345
+	hlen=20 (data=0) UAPRSF=010000 wnd=16060 cksum=5C81 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 25
+TIME:	10:48:02.889275 (0.000522)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=1240 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=2362
+ TCP:	port 8080 -> 1486 seq=3977502345 ack=2421587846
+	hlen=20 (data=1200) UAPRSF=011000 wnd=6432 cksum=BC65 urg=0
+DATA:	on is required.  Unless you
+	have given me your written request for extension, and I have
+	 approved an
+	extension (along with my signature), late submissions will h
+	ave 5% of their
+	worth subtracted for each day late.
+	
+	<P>
+	The essay is a 5,000 to 7,500 word essay related to the cont
+	ent of Operating
+	Systems. <I>You</I> must choose a topic for this essay, alth
+	ough I will be
+	able to help you choose one if you have any difficulties. <I
+	>I</I> must
+	approve your choice of topic in writing before you may begin
+	 work on it.
+	I will refuse to mark final essay submissions for topics I d
+	id not approve.
+	
+	<P>
+	In order to make sure that the chosen topic is relevant, and
+	 that you
+	are `hitting' the mark in your essay, I have set the followi
+	ng deadlines:
+	
+	<P>
+	<DL>
+	<DT><STRONG>Week 6 - 11th April:</STRONG></DT>
+	<DD>Deadline for you choosing an essay topic and
+	        having it approved by me, with my signature attached
+	.
+	</DD>
+	<DT><STRONG>Week 10 - 23rd May:</STRONG></DT>
+	<DD>Deadline for having rough draft of essay
+	        approved, with my signature. The rough draft must in
+	clude
+	        a table of contents, and at least a sketch of each m
+	ajor section.
+	</DD>
+	<DT><STRONG>24th June:</STRONG></DT>
+	<DD>Deadline
+---------------------------------------------------------------------------
+Packet 26
+TIME:	10:48:02.930738 (0.041463)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=324 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=26F6
+ TCP:	port 8080 -> 1486 seq=3977503545 ack=2421587846
+	hlen=20 (data=284) UAPRSF=011000 wnd=6432 cksum=22CA urg=0
+DATA:	 for essay submission.
+	</DD>
+	</DL>
+	
+	<P>
+	A list of those students who have not met these deadlines wi
+	ll be circulated.
+	
+	<P>
+	
+	<H1><A NAME="SECTION00060000000000000000">
+	Referencing Other People's Work and Plagiarism</A>
+	</H1>
+	
+	<P>
+	<BLOCKQUOTE>
+	<I>Please read the accompanying handout <A
+---------------------------------------------------------------------------
+Packet 27
+TIME:	10:48:02.931164 (0.000426)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> iris hlen=20 TOS=00 dgramlen=40 id=59EE
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=CD23
+ TCP:	port 1486 -> 8080 seq=2421587846 ack=3977503829
+	hlen=20 (data=0) UAPRSF=010000 wnd=17236 cksum=521D urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 28
+TIME:	10:48:02.950362 (0.019198)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=1488 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=226A
+ TCP:	port 8080 -> 1486 seq=3977503829 ack=2421587846
+	hlen=20 (data=1448) UAPRSF=011000 wnd=6432 cksum=16EB urg=0
+DATA:	 NAME="tex2html20"
+	  HREF="writing_essays.html">``Writing Your
+	Operating Systems Essay''</A>
+	in conjunction with this section.</I>
+	
+	</BLOCKQUOTE>
+	
+	<P>
+	Every piece of assessment that you submit must be your own w
+	ork.
+	    Any material taken from another source must be cited in 
+	your
+	    submissions; this includes quotations, computer code, di
+	agrams,
+	    equations and tables.  No more than 10% of your submissi
+	on's content
+	    can come from other sources, including books, journals, 
+	on-line
+	    documents or other students.
+	
+	<P>
+	You must not lift whole sections of work (sentences, paragra
+	phs)
+	    from another author, or reword another
+	    author's work, without the use of quotations and correct
+	 citations
+	    in your submission.  Rewording, altering, massaging or a
+	ppropriating
+	    another author's work demonstrates that you have not gai
+	ned an
+	    understanding of the submission topic. You should not in
+	clude any
+	    content in your submissions which you do not understand 
+	or which
+	    you cannot explain `viva voce' to the assessor.
+	
+	<P>
+	If you receive assistance from tutors, lab attendants, lectu
+	rers
+	    or other students, you must acknowledge this help in you
+	r submission.
+	
+	<P>
+	If you break the 10% rule described above, you are guilty of
+	    plagiarism.  If you conspire or collude with another per
+	son to
+	    share work, you are also guilty of plagiarism. If you kn
+	owingly
+	    let another student see your work, and they plagiarise f
+	rom y
+---------------------------------------------------------------------------
+Packet 29
+TIME:	10:48:02.976057 (0.025695)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=1099 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=23EF
+ TCP:	port 8080 -> 1485 seq=3810290070 ack=2113095322
+	hlen=20 (data=1059) UAPRSF=011000 wnd=8576 cksum=9D1A urg=0
+DATA:	HTTP/1.0 200 OK.
+	Date: Tue, 30 Oct 2001 00:47:45 GMT.
+	Server: Apache/1.3.12 (Unix).
+	Last-Modified: Wed, 05 Jul 2000 02:04:23 GMT.
+	ETag: "15949-2ca-396297a7".
+	Accept-Ranges: bytes.
+	Content-Length: 714.
+	Content-Type: text/css.
+	X-Cache: MISS from proxy1.syd.connect.com.au.
+	X-Cache: MISS from bondproxy.bond.edu.au.
+	Proxy-Connection: keep-alive.
+	.
+	
+	/* Century Schoolbook font is very similar to Computer Moder
+	n Math: cmmi */
+	.MATH    { font-family: "Century Schoolbook", serif; }
+	.MATH I  { font-family: "Century Schoolbook", serif; font-we
+	ight: bold }
+	.BOLDMATH { font-family: "Century Schoolbook", serif; font-w
+	eight: bold }
+	
+	/* implement both fixed-size and relative sizes */
+	SMALL.XTINY		{ font-size : xx-small }
+	SMALL.TINY		{ font-size : x-small  }
+	SMALL.SCRIPTSIZE	{ font-size : smaller  }
+	SMALL.FOOTNOTESIZE	{ font-size : small    }
+	SMALL.SMALL		{  }
+	BIG.LARGE		{  }
+	BIG.XLARGE		{ font-size : large    }
+	BIG.XXLARGE		{ font-size : x-large  }
+	BIG.HUGE		{ font-size : larger   }
+	BIG.XHUGE		{ font-size : xx-large }
+	
+	/* document-specific styles come next */
+	
+---------------------------------------------------------------------------
+Packet 30
+TIME:	10:48:02.977569 (0.001512)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	iris -> henry hlen=20 TOS=00 dgramlen=793 id=0000
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=2521
+ TCP:	port 8080 -> 1486 seq=3977505277 ack=2421587846
+	hlen=20 (data=753) UAPRSF=011000 wnd=6432 cksum=C530 urg=0
+DATA:	ou,
+	    you are guilty of plagiarism.
+	
+	<P>
+	Plagiarism counts as academic misconduct. Depending upon the
+	 severity
+	    of the plagiarism, the punishment for the misconduct wil
+	l be:
+	
+	<P>
+	
+	<UL>
+	<LI>Zero marks awarded for the submission,
+	</LI>
+	<LI>Full negative marks awarded for the submission,
+	</LI>
+	<LI>Failure in the unit, or
+	</LI>
+	<LI>Your withdrawl in the degree in which you are enrolled.
+	</LI>
+	</UL>
+	
+	<P>
+	Your attention is drawn to the section entitled `Academic Mi
+	sconduct'
+	    in the University College Handbook, which states that in
+	 severe
+	    cases, academic misconduct can lead to ``permanent exclu
+	sion from
+	    the University''.
+	
+	<P>
+	<HR>
+	<!--End of Navigation Panel-->
+	<ADDRESS>
+	<I>Warren Toomey <BR>
+	2001-04-30</I>
+	</ADDRESS>
+	</BODY>
+	</HTML>
+	
+---------------------------------------------------------------------------
+Packet 31
+TIME:	10:48:02.977797 (0.000228)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> iris hlen=20 TOS=00 dgramlen=40 id=59EF
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=CD22
+ TCP:	port 1486 -> 8080 seq=2421587846 ack=3977506030
+	hlen=20 (data=0) UAPRSF=010000 wnd=16767 cksum=4B59 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 32
+TIME:	10:48:03.074319 (0.096522)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> iris hlen=20 TOS=00 dgramlen=40 id=59F0
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=CD21
+ TCP:	port 1485 -> 8080 seq=2113095322 ack=3810291129
+	hlen=20 (data=0) UAPRSF=010000 wnd=17520 cksum=1CE5 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------

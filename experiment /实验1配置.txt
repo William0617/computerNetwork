@@ -1,0 +1,36 @@
+172.168.1.1
+相同设备用交叉，不同设备用直连。
+
+
+switch配置trunk：
+1.config)#int fa 4/0
+2.config-if)#switchport mode trunk
+3.config-if)#switchport trunk allowed vlan all
+4.config-if)#no shut
+
+不同网段配置router:
+1.对应的端口对应其相连的网段地址
+例如：
+1.config)#int fa 0/0 
+2.config-if)#int no shut
+3.config-if)#ip address 192.168.1.1 255.255.255.0 
+4.config-if)#exit
+
+
+加端口到VLAN
+int fa 0/0
+switchport access vlan 10
+int fa 0/2
+switchport access vlan 20
+end
+
+端口模式切换，接入vlan
+switchport mode access
+switchport access vlan 10
+
+双线，不同VLAN就可以实现多交换机中的PC连接。
+
+
+交换机通过trunk连接配置方法：
+1.config)#int f0/0
+2.config)#sw mode tr

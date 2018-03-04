@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content=
+"HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org">
+<meta name="GENERATOR" content="TtH 3.59">
+<style type="text/css">
+ div.p { margin-top: 7pt;}
+</style>
+
+<style type="text/css">
+<!--
+ td div.comp { margin-top: -0.6ex; margin-bottom: -1ex;}
+ td div.comb { margin-top: -0.6ex; margin-bottom: -.6ex;}
+ td div.hrcomp { line-height: 0.9; margin-top: -0.8ex; margin-bottom: -1ex;}
+ td div.norm {line-height:normal;}
+ span.roman {font-family: serif; font-style: normal; font-weight: normal;} 
+ span.overacc2 {position: relative;  left: .8em; top: -1.2ex;}
+ span.overacc1 {position: relative;  left: .6em; top: -1.2ex;} -->
+</style>
+<title>解码数据包2</title>
+
+<style type="text/css">
+ body {
+  background-color: #FFFFFF;
+ }
+ span.c6 {font-size: 80%}
+ div.c5 {font-size: 144%}
+ div.c4 {font-weight: bold; text-align: center}
+ span.c3 {font-size: 144%}
+ div.c2 {text-align: center}
+ h1.c1 {font-weight: bold; text-align: center}
+h1
+	{margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+.STYLE2 {color: #FFFFFF}
+</style>
+</head>
+<body>
+<div class="c4">
+	<p style="text-align: left"><span class="c3"><font size="6">Workshop 7:</font></span></p>
+	<p style="text-align: left"><span class="c3"><font size="6">解码因特网数据包（2）</font></span></div>
+<div class="p c5"><!----></div>
+<div class="p"><!----></div>
+<div class="c2"><!----></div>
+<h2>1:  数据包解码软件</h2>
+<div class="p"><!----></div>
+网络管理员有时需要软件来监管网络中的数据包，管理员甚至需要使用软件来解码数据包，并分析其主要的头部字段。
+<div class="p"><!----></div>
+可以在大多数的Windows和Unix系统中安装包捕获软件。其中一类非常流行的软件是
+<a href="http://en.wikipedia.org/wiki/Berkeley_Packet_Filter">Berkeley Packet Filter (BPF)</a>. 
+<a href="http://www.ethereal.com/">Ethereal</a> 和
+<a href="http://en.wikipedia.org/wiki/Tcpdump">Tcpdump</a> 这两款应用使用的就是BPF。 在Windows环境下有非常多的包捕获工具，此处不再列举。
+<div class="p"><!----></div>
+我们将会查看一个TCP会话和一组UDP报文交换。在每一部分中，你将会看到如下两个链接：
+<div class="p"><!----></div>
+<ul>
+<li> 计算机的IP地址已经转换成机器的名字。
+<div class="p"><!----></div>
+</li>
+<li> 但是IP地址使用点分十进制表示法，并且没有字符类型的机器名。
+<div class="p"><!----></div>
+</li>
+</ul>
+开始的时候，你可以查看包含机器名的已经译码的数据包。
+<div class="p"><!----></div>
+<div class="p"><!----></div>
+<h3><a name="tth_sEc3.2" id="tth_sEc3.2">1.1</a>  Trace 1: 一个 HTTP
+传输</h3>
+<div class="p"><!----></div>
+<ul>
+<li><a href="trace2_decode.txt">使用机器名的解码格式数据包</a>
+  <div class="p"><!----></div>
+</li>
+<li><a href="trace2_nonamesdecode.txt">使用IP地址的解码格式数据包</a>
+  <div class="p"><!----></div>
+</li>
+</ul>
+Trace 1 展示了从机器 <em>henry.it.bond.edu.au</em> 到网页 <a href=
+"http://www.cs.adfa.edu.au/teaching/studinfo/osrts/index.html">http://www.cs.adfa.edu.au/teaching/studinfo/osrts/index.html</a>.的HTTP 1.0
+请求。因为Bond大学有一个网络代理，所以 <em>henry</em> 无法直接访问服务器 <em>www.cs.adfa.edu.au</em> 的 TCP 80端口，而是必须和网络代理服务器 <em>iris.bond.edu.au</em> 的8080端口建立TCP连接。
+<div class="p"><!----></div>
+这个数据包包含一些初始化包，这些包并不是连接的一部分。你可以忽略数据包1、2、4和5。三次握手连接所涉及的包分别是3、6和7.
+<div class="p"><!----></div>
+在数据包8中，<em>henry</em> 向上述的网页发出请求，并且也识别了请求页面的应用程序（Mozilla/4.76）。<em>Iris</em> 在数据包9中确认了TCP的连接并开始向<em>henry</em>传回网页。
+<div class="p"><!----></div>
+返回的网页太大了，无法完全放入一个数据包中，所以<em>iris</em> 将页面作为数据段放到数据包10到30传回去。注意，在数据包10中的有效数据载荷是1460字节，加上IP首部（20字节）和TCP首部（20字节），总共1500字节，可以完整的放入一个以太网帧中。<em></em>
+<div class="p"><!----></div>
+你可以参考 <a href="http://tools.ietf.org/html/rfc1945">RFC 1945</a> 来了解 HTTP 1.0 标准的更多内容。
+<div class="p"><!----></div>
+<h3><a name="tth_sEc3.3" id="tth_sEc3.3">1.2</a>  Trace 2: DNS
+查询</h3>
+<div class="p"><!----></div>
+<ul>
+<li><a href="trace3_decode.txt">使用机器名的解码格式数据包</a>
+<div class="p"><!----></div>
+</li>
+<li><a href="trace3_nonamesdecode.txt">使用IP地址的解码格式数据包</a>
+  <div class="p"><!----></div>
+</li>
+</ul>
+Trace 2 演示了一个客户端向DNS服务器发送的若干个请求和从域名服务器得到反馈的情况。通过DNS系统，可以将文本的域名系统（<em>james.bond.edu.au</em>）转换成IP地址（131.245.7.97），反之也是可以的。
+<div class="p"><!----></div>
+注意，和上面的一样，客户端在本次实验中选择的端口号是随意的，但是所有的DNS服务器都会监听UDP 53端口。
+<div class="p"><!----></div>
+和HTTP不同，DNS传送协议将它一部分的数据以二进制的格式发送出去，从tcpshow中得到的结果是请求/回复中可打印ASCII部分，不可打印的部分用句点代替。
+<div class="p"><!----></div>
+一些DNS记录查询:
+<div class="p"><!----></div>
+<table border="1">
+<tr>
+<td>Source Of Authority (SOA)</td>
+<td>查找给定网络域的主域名服务器</td>
+</tr>
+<tr>
+<td>Address (A)</td>
+<td>查找给定文本域名对应的IP地址</td>
+</tr>
+<tr>
+<td>Mail eXchange (MX)</td>
+<td>查找愿意接收发送给特定主机邮件的所有计算机（比如，所有发送到cs.adfa.edu.aucomputer的邮件都会被发送到csadfa）</td>
+</tr>
+<tr>
+<td>Canonical NAMEs (CNAME)</td>
+<td>将www这样的别名映射为真正的系统名</td>
+</tr>
+<tr>
+<td>PoinTeR (PTR)</td>
+<td>将一个IP地址映射回它的域名</td>
+</tr>
+<tr>
+<td>TEXT (TXT)</td>
+<td>一些说明信息</td>
+</tr>
+</table>
+<div class="p"><!----></div>
+分辨出哪种查询是哪种类型非常困难，但是数据包1好像是对<em>www.ibm.com</em>的A查询，数据包3好像是对<em>hotmail.com</em>域的SOA查询，数据包5看起来是一个对地址130.37.24.11的PTR请求，数据包7应该是一个对<em>bond.edu.au</em>的关于邮件的MX请求。
+<div class="p"><!----></div>
+UDP并不可靠，它也不分割和重装配数据流。因此，没有建立连接阶段：一个数据包作为请求，一个数据包作为应答。UDP 也不会对包进行重传：如果一个应用程序的UDP包丢失了，应用程序必须要能够感知到包的丢失，如果需要的话应用程序会再次对数据包的发送请求。
+<div class="p"><!----></div>
+<h3><a name="tth_sEc3.4" id="tth_sEc3.4">1.3</a> 作业</h3>
+<div class="p"><!----></div>
+根据上面的2个练习来回答下列问题：
+<div class="p"><!----></div>
+<ol type="1">
+<li><em>henry</em>,<em> </em><em>iris</em>, 和 <em>kirk</em> 的IP地址是多少？
+  <div class="p"><!----></div>
+</li>
+<li><em>henry</em> 的数据链路地址（物理地址）是多少？
+  <div class="p"><!---->
+    <div class="p">
+      <!---->
+      <div class="p">
+        <!---->
+        <div class="p">
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+<li><em>iris</em>一直在监听的TCP端口号是多少？
+  <div class="p"><!----></div>
+</li>
+<li><em>henry</em>使用的生存周期值（TTL）是多少？
+  <div class="p"><!----></div>
+</li>
+<li>2个服务使用的生存周期值（TTL）各是多少？
+  <div class="p"><!----></div>
+</li>
+<li>在trace 1中，使用了TCP首部的哪些字段来进行确认的捎带。
+  <div class="p"><!----></div>
+</li>
+<li>在trace 1中，从服务器经由<em>iris</em>传回给客户端<em>henry</em>的应用程序数据有多少字节？
+  <div class="p"><!----></div>
+</li>
+<li>你认为从<em>henry</em> 到 <em>iris</em>的链路的<em>最大传输单元</em> 是多少？是如何计算出来的？
+  <div class="p"><!----></div>
+</li>
+<li>在trace 2中，<em>henry</em> 向DNS发送的每次请求使用的UDP端口号相同吗？他的这种端口选择方式和在trace1中<em>henry</em>的端口选择相同吗？
+  <div class="p"><!----></div>
+</li>
+</ol>
+<div class="p"><!----></div>
+<h2><a name="tth_sEc4" id="tth_sEc4">2</a>：总结</h2>
+<div class="p"><!----></div>
+作为一个网路管理员，你常常需要专心于数据包解码工作。显然，拥有像Tcpdump和Ethereal这样的包捕获和分析工具是非常必要的。正像我们上面所做的一样，这些类似的工具可以统计出某一协议现在有多少数据包正在通过链路，并且这些工具可以让你有选择的去监听一些协议。
+<div class="p"><!----></div>
+<p>大部分的数据包分析工具的一个缺点是它们无法知道现在使用的每一个协议。比如，当你开始在本地局域网中去探测以太网帧，帧类型字段Type=BEAF，你会发现包分析器无法获得这个协议的线索。正像前面所看到的，我们可以对IP和TCP首部进行解码，但是在DNS查询中传输的二进制数据无法解码。</p>
+<p>为了能够成功的维护和管理任何计算机网路，包捕获和分析工具是必须的。通过它们，你会最终发现在你网络中发生的一切。</p>
+<h2><a name="tth_sEc4" id="tth_sEc4">3</a>：TCP/UDP练习</h2>
+<h3><a name="tth_sEc3.4" id="tth_sEc3.4">3.1</a> 作业</h3>
+<p>1．当数据链路层将一个帧从一个链路发送到另一个链路的时候，它依靠哪种标识来转发这个帧？（?? ） <br>
+a.主机ID<br>
+b. IP  地址 <br>
+c. 域名 <br>
+d. 物理地址 </p>
+<p><br>
+  2．网络中ARP协议的目的是通过给定的（?? ）来查找（?? ）。 <br>
+  a. IP地址, 域名 <br>
+  b. IP地址, 网络号 <br>
+  c. IP地址, 物理地址 <br>
+  d. 物理地址, IP地址 </p>
+<p><br>
+  3．下列哪个属于B类IP地址？ <br>
+  a. 230.0.0.0<br>
+  b. 130.4.5.6<br>
+  c. 260.0.0.1<br>
+  d. 30.4.5.6</p>
+<p><br>
+  4．在传输层中使用的UDP数据单元称为（?? ?）。 <br>
+  a. 用户数据报 <br>
+  b. 报文 <br>
+  c. 段 <br>
+  d. 帧 </p>
+<p><br>
+  5．应用程序PING发出的是(?? )报文。 <br>
+  a. TCP请求报文 <br>
+  b. TCP应答报文 <br>
+  c. ICMP请求报文 <br>
+  d. ICMP应答报文 </p>
+<p><br>
+  6．TCP和UDP协议的相似之处是（?? ）。 <br>
+  a. 面向连接的协议 <br>
+  b. 面向非连接的协议 <br>
+  c. 传输层协议 <br>
+  d. 以上均不对</p>
+<p> <br>
+  7．传输层可以通过（ ?）标识不同的应用。 <br>
+  a. 物理地址 <br>
+  b. 端口号 <br>
+  c. IP地址 <br>
+  d. 逻辑地址 </p>
+<p><br>
+  8．在TCP/IP中，解决计算机到计算机之间通信问题的层次是（? ）。 <br>
+  a. 网络接口层 <br>
+  b. 网际层 <br>
+  c. 传输层 <br>
+  d. 应用层 </p>
+<p><br>
+  9．对于下列说法，错误的是（ ??）。 <br>
+  a. TCP协议可以提供可靠的字节流传输服务。 <br>
+  b. TCP协议可以提供面向连接的字节流传输服务。 <br>
+  c. TCP协议可以提供全双工的字节流传输服务。 <br>
+  d. TCP协议可以提供面向非连接的字节流传输服务。</p>
+<p> <br>
+  10．以下关于TCP/IP协议的描述，（ ??）是错误的。 <br>
+  a. TCP/IP协议属于应用层 <br>
+  b. TCP、UDP协议都要通过IP协议来发送、接收数据 <br>
+  d. TCP协议提供可靠的面向连接服务 <br>
+  d. UDP协议提供简单的无连接服务 </p>
+<p><br>
+  11．在TCP协议中，建立连接时需要将控制字段中的（? ）标志位置1。 <br>
+  a. ACK<br>
+  b. SYN<br>
+  c.  ACK<br>
+  d.  SYN</p>
+<p><br>
+  12．Internet运输层协议包括（?? ）。 <br>
+a. ICMP<br>
+b. TCP<br>
+c. UDP<br>
+d. ARP</p>
+<p><br>
+  13．对于下列说法，错误的是（ ??） <br>
+  a. 运输层的作用是在收发双方主机中的应用进程之间传输数据 <br>
+  b. 运输层的作用是在收发双方主机之间传输数据 <br>
+  c. IP层不提供可靠性保障 </p>
+d. TCP提供可靠性保障
+<p>&nbsp; </p>
+<h1 class="MsoNormal"><a name="tth_sEc3.4" id="tth_sEc3.4">3.2</a> 作业</h1>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">
+<span style="font-family: Times New Roman">1.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-family: Times New Roman" dir="LTR">在因特网中使用物理地址、IP地址和端口号。在因特网体系结构中，它们都属于哪个层？</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">
+<span style="font-family: Times New Roman">2.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: &quot;Times New Roman&quot;" dir="LTR">对比一下，UDP和TCP的特点</span>各有哪些？</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">
+<span style="font-family: Times New Roman">3.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Times New Roman" dir="LTR">解释TCP数据传输为什么是可靠的。</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">
+<span style="font-family: Times New Roman">4.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Times New Roman" dir="LTR">在不使用IP的情况下，TCP能够直接跨越一个网络吗？为什么？</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">5. P231, 习题5-11</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">6. P231, 习题5-15</p>
+7. P232,  习题5-23
+</body>
+</html>

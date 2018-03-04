@@ -1,0 +1,299 @@
+<html><head>
+ <title>Network Discovery and Diagnostic Tools, ARP and Routing</title>
+	<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+li.MsoNormal1 {mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+li.MsoNormal2 {mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+-->
+    </style>
+</head>
+<body>
+<h1>Workshop 4:</h1>
+<h1>常用网络诊断工具，IP 和 ARP</h1>
+<p>
+在这篇教程中，我们将会学习一些网络诊断和探测知识，同时学习使用一些工具来探究从我们到远程网络节点的延迟以及我们和这些节点之间的路由列表。</p>
+<h3>1：Ping and Traceroute（了解）</h3>
+<p>
+我们通常需要了解某一个特定的计算机是否连接到了因特网，并且是否是可达的。更细节一点，我们需要了解通过因特网到达这台计算机所经过的所有路径。有很多工具可以帮助我们达到上述要求，其中较常用的是 ping 和 traceroute。</p>
+<h4>1.1 Ping</h4>
+<p><em>PING</em> 用来探测两个主机之间的连通性。<em>ping</em> 命令使用ICMP协议，更具体一些：ping使用的是ICMP中的请求报文和请求应答报文。这些程序在Unix 和 Windows 系统中都适用。
+</p>
+<p>
+可以仿照一下格式练习Ping命令：
+<pre>
+$ ping www.pku.edu.cn</pre>
+<pre>
+$ man ping (查看这个命令的指南手册)
+</p>
+</pre>
+<p>
+完整的语法格式是：ping [可选项] 主机名<br>
+可选项： -n 不使用DNS, -t 发送指定数量的数据包, -R 记录路由， -c 数据包数量, -s 数据包大小 </p>
+<h4>1.2 Traceroute</h4>
+<p>
+ping 可以告诉我们一个系统是否连接成功并且正在运行，但是它无法提供数据包到达目的站点的路径的详细信息。这个信息是由程序<b>traceroute</b>提供的。当运行这个程序，traceroute 可以获得从本机到目的站点所经过的所有路由器的名字和ip地址以及到达这个路由器的时间（有时这个时间信息并不能够获得，如果出现这种情况程序会用“*”来代替时间）。</p>
+<p>
+语法格式: <tt>traceroute</tt> [可选项] <em>主机名</em></p>
+<p>
+Traceroute 命令可以运行在 Unix 系统中，你可以通过输入以下命令来使用traceroute。</p>
+<pre>
+$ traceroute www.pku.edu.cn </pre>
+<pre>
+  (或者 traceroute 其他地址)</pre>
+<pre>
+$ man traceroute </pre>
+<pre>
+  (查看这个命令的指南手册)</pre>
+<h4>1.3 练习</h4>
+    
+    在 <a href="http://network-tools.com/">network-tools.com</a> 这个网站上可以找到在线的traceroute程序，使用这个在线工具测试你在上个练习中 ping 过的站点。数一数从原点到目的站点之间一共有几个路由器。
+    <p></p>
+注意: 有时中间路由的名字可以给我们一些路由所在位置的提示。看一看你是否能够判断出这条路径上路由的地址在哪里。
+<p></p>
+
+另一个提供一些traceroute功能服务的网站是 <a href="http://www.traceroute.org/">traceroute.org</a>. 可以去尝试使用一下。
+<h4>1.4 自治系统</h4>
+    <p>
+  因特网中的路由选择是基于 IP 网络的，而不是基于单个IP 地址。所以这里我们要详细说明一下。</p>
+    <p>
+    现实生活中有非常多的网络在运行，理论上一个处在较大因特网服务提供商或者是其他组织之间连接点上的路由器，必须对这些提供商和组织全部了解了才能够做出恰当的路由决定。</p>
+    <p>
+  不幸的是，路由器的存储空间非常的有限并且路由决策要求具有实时性，所以这些路由器不能够在它们的路由表中存放所有的单个网络。它们希望存储的内容类似于“属于提供商xyz的所有网络应该发送到那里”。</p>
+    <p>
+    为了达到上述的目的，路由器必须以某种方式来定位和识别不同的提供商。所以设计者们设计了自制系统号（<em>Autonomous System Numbers</em>）。</p>
+    <p>
+  一个自治系统（AS）是处于一个管理机构控制下的IP网络群组，这个群组拥有一个单一且明确定义的外部路由协议。</p>
+    <p>
+  每个连接到不止一个ISP上的组织，必须拥有它自己的自治系统号，本系统号与这个组织所拥有的所有网络有关。主要的ISP和非常多的组织都采用这种做法。</p>
+    <p>
+    关于自制系统的信息可以在世界上各种各样的whiosi服务中进行查询，比如上文提到的 <a href="http://network-tools.com/">network-tools.com</a> 服务。 
+	如果你想了解更多关于自治系统号、用途和它背后的相关技术，你可以去查询这些网站：
+	<a href="http://searchnetworking.techtarget.com/sDefinition/0,,sid7_gci213662,00.html">
+	searchnetworking.com</a> 或者是
+	<a href="http://www.apnic.net/info/faq/as_faq.html">APNIC FAQ</a>.  </p>
+
+    <h3>2：IP 地址，网络掩码和路由</h3>
+
+    <u>(本节所讲内容会在以后再次讲授。现在我们只需对这些内容有大概了解即可。)</u>
+    <p>IP 地址是在因特网上通用的地址，长度为4字节。IP 地址由两部分组成：一部分表示一个网络，另一部分代表这个网络中的特定主机。</p>
+
+    <h4>2.1 网络掩码和默认路由</h4>
+
+每一个网络设备（PC，路由器或者其他设备）需要知道这些信息：
+<ol type="1">
+<li>它自己的IP地址</li>
+<li>默认路由的IP地址</li>
+<li>判断它与所发送报文的目的站点之间是否是直接连接的，或者是必须将报文发送给默认路由。</li>
+</ol>
+为了做到第三部分的内容，每个设备需要有一个网络掩码。这个32位的掩码可以计算出一个设备是本地机器还是远端机器（即不在同一个网络中）。掩码由两部分组成：
+<ul>
+<li>左手端的部分：都是二进制的1，标识出IP 地址的哪些位表示网络号。</li>
+<li>右手端的部分：都是二进制的0，标识出IP 地址的哪些位表示主机号。</li>
+</ul>
+比如，假设我们的 IP 地址是 131.245.6.7，属于 /16 网络，所以我们的32位掩码应当是
+11111111 11111111 00000000 0000000. 前16位代表网络号，后16部分表示在这个网络上的主机号。
+<h4>2.2 练习 - 命令 <font color="#0000FF"><span style="font-weight: 400"><i>
+ifconfig(linux系统中)、ipconfig(windows系统中)</i> </span></font>和<font color="#0000FF"><span style="font-weight: 400; font-style: italic"> 
+netstat</span></font></h4>
+
+<p>在Linux终端中输入ifconfig，或者在windows中的运行对话框中输入cmd，进入MS-DOS窗口，输入ipconfig,将会看到你的机器的以太网地址，IP 地址，网络掩码和默认路由（也称作默认网关）。</p>
+<p>观察它们的具体数值，并理解你的IP地址的哪几位表示网络号，哪几位表示主机号。</p>
+<p>在Linux或者windows中通过命令 <font color="#0000FF"> <tt>netstat -r</tt></font> 来查看路由表，包括你默认网关的路由。
+</p>
+<h4>2.3 使用网络掩码</h4>
+
+当一个站点需要判断一个机器是否在本地，它使用的算法是：
+<ol type="1">
+<li>将自己的IP 地址和自己的网络掩码进行“与”（AND）运算，得到结果A.</li>
+<li>将目的主机的IP 地址和自己的网络掩码进行“与”（AND）运算，得到结果B.</li>
+<li>如果A和B相等，目的主机和自己在同一个网络。可以使用ARP协议得到它的物理地址，进而直接向机器发送数据包。</li>
+<li>如果A和B不相等，可以使用ARP协议来找到默认路由的物理地址，进而将数据包发送给默认路由器，由它来负责传输。</li>
+</ol>
+
+<h4>2.4 作业</h4>
+
+假设我们的 IP 地址是 131.245.6.7，子网掩码是 /16. 将IP地址的各部分转化为二进制表示，然后对整个IP 地址重写成二进制形式。又假设我们的网络掩码是 11111111 11111111 00000000
+0000000.
+
+<ol type="1">
+<li>将 IP 地址为 1.2.3.4 的目的主机转化为32位二进制表示形式。并使用上述算法判断目的主机和自己的机器是否在同一个网络中。</li>
+<li>将 IP 地址为 131.245.64.100 的目的主机转化为32位二进制表示形式。并使用上述算法判断目的主机和自己的机器是否在同一个网络中。</li>
+</ol>
+
+<h3>3：地址解析协议（Address Resolution Protocol）</h3>
+
+路由器接收到报文后，使用一种叫做
+<em>路由表</em> 的查找表来决定转发这个报文的最佳路径。我们将在下个星期学习路由表。然而，最后一个路由器的工作是将数据包传送给真正的目的站点，为了实现这个功能，路由器需要知道链路层地址（即物理地址）：但是路由器所知道的仅仅是目的站点的 IP 地址。
+<p></p>
+实际的做法是，路由器在发送报文前要发送一个单独的<em>地址解析协议</em>(ARP) 帧。ARP帧将广播到所有站点，并进行询问：在这个局域网内的哪一个站点的IP地址是：X.X.X.X? X.X.X.X是报文中目的站点的IP地址。
+<p></p>
+希望的情景是，一个站点接收到了这个广播帧，并判断出了自己的IP地址和给出的IP地址相符。于是这个站点向路由器发送了一个定向帧，内容大致是：我的链路地址是HH:HH:HH:HH:HH:HH，我的IP地址是X.X.X.X。
+<p></p>
+路由器接下来的任务是将原来的报文封装称帧，填入正确的链路地址，最后将帧发送给目的站点。
+<p></p>
+任何一个站点无论何时将一个IP报文发送给在相同链路上的另一个站点，ARP都负责确定链路层地址。为了避免一直运行ARP协议，每一个站点会保存最近一点时间接收到的ARP回复的缓存。所以一旦知道了一个链路层地址，我们会记住它并在下次时使用它。然而，如果在5到10分钟内没有与这个站点发生联系，链路层转发表会将此站点项删除。
+<h4>3.1 练习 -  <span style="font-weight: 400"><font color="#0000FF">
+	<i>arp</i></font></span> 命令</h4>
+    打开你的计算机的命令终端或者是 MS-DOS窗口，使用
+    <font color="#0000FF">
+    <em>arp</em></font> 命令来查看你的 ARP 缓存，试着去ping和你在同一个子网的几台计算机。当你接收到了一些ping 的回复，查看你的ARP缓存，并试着去找出你刚才ping过的几台计算机的链路地址是多少。
+    <h4>3.2 练习</h4>
+    在本周所给文件中有一个 Packet Tracer 方案: <a href="Pkts/routing.pkt">routing.pkt</a>。进入模拟模式，选择 "Scenario 0"，跟踪网络中不同的包的传输，双击报文来查看每一个交换/路由步，阅读给出的解释。
+    <h3>4：其他一些作业:</h3>
+    <h2><font size="4">I. 多选题</font></h2>
+    <p><b>Part 1:</b></p>
+    <p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">
+<span style="font-size: 11.0pt">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt" dir="LTR">下列哪种交换类型独占通信链路？</span></p>
+    <ol style="margin-top: 0cm; margin-bottom: 0cm" start="1" type="a">
+	<li class="MsoNormal"><span style="font-size: 11.0pt">电路交换</span></li>
+	<li class="MsoNormal"><span style="font-size: 11.0pt">分组交换</span></li>
+	<li class="MsoNormal"><span style="font-size: 11.0pt">虚电路交换</span></li>
+	<li class="MsoNormal"><span style="font-size: 11.0pt">报文交换</span></li>
+</ol>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">
+<span style="font-size: 11.0pt">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt" dir="LTR">下列哪种交换类型可以使一个报文的所有数据使用同一条链路路径？</span></p>
+<ol style="margin-top: 0cm; margin-bottom: 0cm" start="1" type="a">
+	
+	<li class="MsoNormal1"><span style="font-size: 11.0pt">电路交换</span></li>
+	<li class="MsoNormal1"><span style="font-size: 11.0pt">分组交换</span></li>
+	<li class="MsoNormal1"><span style="font-size: 11.0pt">虚电路交换</span></li>
+	<li class="MsoNormal1"><span style="font-size: 11.0pt">报文交换</span></li>
+</ol>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">
+<span style="font-size: 11.0pt">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt" dir="LTR">在下列哪种交换类型中，从原点发送的报文的每一个数据包<b>不需要相同路径传输</b></span></p>
+<ol style="margin-top: 0cm; margin-bottom: 0cm" start="1" type="a">
+	<li class="MsoNormal"><span style="font-size: 11.0pt">电路交换</span></li>
+	<li class="MsoNormal"><span style="font-size: 11.0pt">报文交换</span></li>
+	<li class="MsoNormal"><span style="font-size: 11.0pt">虚电路交换</span></li>
+	<li class="MsoNormal"><span style="font-size: 11.0pt">分组交换</span></li>
+</ol>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt"><span style="font-size: 11.0pt" dir="LTR">4.<span class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt"><span style="font-size: 11.0pt" dir="LTR">在下列哪种交换类型中</span></span>，从原点发送的报文的每一个数据包<b>需要相同路径传输</b></span></p>
+<ol style="margin-top: 0cm; margin-bottom: 0cm" start="1" type="a">
+  <li class="MsoNormal2"><span style="font-size: 11.0pt">电路交换</span></li>
+  <li class="MsoNormal2"><span style="font-size: 11.0pt">报文交换</span></li>
+  <li class="MsoNormal2"><span style="font-size: 11.0pt">虚电路交换</span></li>
+  <li class="MsoNormal2"><span style="font-size: 11.0pt">分组交换</span></li>
+</ol>
+<p class="MsoNormal"><b>Part 2:</b></p>
+<p class="MsoNormal"><span style="font-size: 11.0pt">1. 因特网体系结构包括 ___ 层 </span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>3</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>5</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>7</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>4</p>
+<p class="MsoNormal">2. 端到端的整个信息交付是 ___ 层的任务。</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>网络</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">传输</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">会话</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">表现</span></p>
+<p class="MsoNormal">3.  ___ 层最接近传输介质。</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">物理</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">数据链路</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">网路</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">传输</span></p>
+<p class="MsoNormal">4. 数据的解密和加密是 ___ 层的任务。</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">物理</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">数据链路</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>表现</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">会话</span></p>
+<p class="MsoNormal">5. 通过 __ 层邮件服务和目录服务对于网络用户可用。</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;</span>数据链路</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">会话</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">传输</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">应用</span></p>
+<p class="MsoNormal">6. 当数据包从较低的层向较高的层传输，头部信息 ___.</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">增加 </span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>减少</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>重写</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>修改</p>
+<p class="MsoNormal">7. 当数据包从较高的层向较低的层传输，头部信息 ___.</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">增加</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">移除</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">重写</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">修改</span></p>
+<p class="MsoNormal">8. 在 ___ 层，帧传输涉及到两个相邻的计算机。</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">传输</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> <span style="font-style: normal; font-variant: normal; font-weight: normal; direction:LTR"> 数据链路<span dir="LTR"></span></span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">表示</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">应用</span></p>
+<p class="MsoNormal">9.  在 ___ 层，将bit信号转换为电信号。</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">物理</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">数据链路</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">传输</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>表示</p>
+<p class="MsoNormal"><b>Part 3:</b></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">1.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">下列哪一个不是网际互联设备？</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">网桥</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">网关</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">路由器</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">以上所有</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">2.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;</span>下列哪个设备所在的层数最高？</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">网桥</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">集线器</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">路由器</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">网关</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">3.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">网关支持 ___ </span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>协议转换</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>改变包大小</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>数据封装</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">a 和 b.</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">4.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">中继器在___层起作用</span>。</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">物理</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">数据链路</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">网络</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">a 和 b</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">5.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">网桥在___层起作用</span>。</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">物理</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">数据链路</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">网络</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">a 和 b.</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">6.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">路由器在___层起作用</span>。</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>物理和数据链路</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>物理、数据链路和网络</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>数据链路和网络</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>网络和传输</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">7. <span dir="LTR">因特网中的IP层提供____服务</span>。</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>电路交换</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>报文交换</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>数据报</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>虚电路</p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">8. <span dir="LTR">下列哪个可能拥有多个IP地址：</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">a.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">网桥</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">b.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">集线器</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">c.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">路由器</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">d.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span dir="LTR">网关</span></p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">&nbsp;</p>
+<h2><b><font size="4">II. 问答提</font></b></h2>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">
+<span style="font-size: 11.0pt">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt" dir="LTR">解释下列逻辑中的错误：</span></p>
+<p class="MsoBodyTextIndent" style="text-align:justify;text-justify:inter-ideograph">
+<span style="font-size: 11.0pt">报文交换需要在每个包中增加控制位和地址位。这将会在报文交换时带来大量的额外开销。在电路交换中，一条直接的链路已经建立起来，不需要增加额外的信息。</span></p>
+<ol style="margin-top: 0cm; margin-bottom: 0cm" start="1" type="a">
+	<li class="MsoNormal">因此在电路交换中没有额外开销</li>
+	<li class="MsoNormal">既然在电路交换中没有额外开销，所以电路交换的效率肯定要比分组交换高</li>
+</ol>
+<p class="MsoNormal" style="text-align: justify; text-justify: inter-ideograph; text-indent: -18.0pt; margin-left: 18.0pt">
+<span style="font-size: 11.0pt">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span><span style="font-size: 11.0pt" dir="LTR">给出两个适用于虚电路服务（或者是面向连接的传输模式）的应用的例子。然后给出一个适用于报文交换服务（或者是无连接传输模式）的应用的例子 。 </span></p>
+<p class="MsoNormal" style="text-align: justify; text-justify: inter-ideograph; text-indent: -18.0pt; margin-left: 18.0pt">
+<span style="font-size: 11.0pt">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size: 11.0pt" dir="LTR">对数据通信而言，电路交换和虚电路交换哪种效率更高？</span></p>
+<p class="MsoNormal" style="text-align: justify; text-justify: inter-ideograph; text-indent: -18.0pt; margin-left: 18.0pt">&nbsp;</p>
+    
+</body></html>  

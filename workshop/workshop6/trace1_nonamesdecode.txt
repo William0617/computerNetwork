@@ -1,0 +1,417 @@
+---------------------------------------------------------------------------
+Packet 1
+TIME:	10:41:32.533638
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=00 dgramlen=44 id=5976
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C932
+ TCP:	port 1479 -> 21 seq=1449154503 ack=0000000000
+	hlen=24 (data=0) UAPRSF=000010 wnd=16384 cksum=8BFF urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 2
+TIME:	10:41:32.534797 (0.001159)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=00 dgramlen=44 id=068B
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1D1E
+ TCP:	port 21 -> 1479 seq=4259780790 ack=1449154504
+	hlen=24 (data=0) UAPRSF=010010 wnd=17520 cksum=70E0 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 3
+TIME:	10:41:32.535293 (0.000496)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=00 dgramlen=40 id=5977
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C935
+ TCP:	port 1479 -> 21 seq=1449154504 ack=4259780791
+	hlen=20 (data=0) UAPRSF=010000 wnd=17520 cksum=889D urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 4
+TIME:	10:41:32.578278 (0.042985)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=108 id=068F
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CCA
+ TCP:	port 21 -> 1479 seq=4259780791 ack=1449154504
+	hlen=20 (data=68) UAPRSF=011000 wnd=17520 cksum=3E4C urg=0
+DATA:	220-  Welcome to the anonymous ftp service
+	<*** Rest of data missing from packet dump ***>
+---------------------------------------------------------------------------
+Packet 5
+TIME:	10:41:32.678417 (0.100139)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=40 id=5978
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C924
+ TCP:	port 1479 -> 21 seq=1449154504 ack=4259780859
+	hlen=20 (data=0) UAPRSF=010000 wnd=17520 cksum=8859 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 6
+TIME:	10:41:32.679578 (0.001161)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=359 id=0690
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1BCE
+ TCP:	port 21 -> 1479 seq=4259780859 ack=1449154504
+	hlen=20 (data=319) UAPRSF=011000 wnd=17520 cksum=9B51 urg=0
+DATA:	220-  operating system is FreeBSD 4-STABLE
+	<*** Rest of data missing from packet dump ***>
+---------------------------------------------------------------------------
+Packet 7
+TIME:	10:41:32.778401 (0.098823)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=40 id=5979
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C923
+ TCP:	port 1479 -> 21 seq=1449154504 ack=4259781178
+	hlen=20 (data=0) UAPRSF=010000 wnd=17520 cksum=871A urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 8
+TIME:	10:41:34.139553 (1.361152)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=50 id=597A
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C918
+ TCP:	port 1479 -> 21 seq=1449154504 ack=4259781178
+	hlen=20 (data=10) UAPRSF=011000 wnd=17520 cksum=4A82 urg=0
+DATA:	USER ftp.
+	
+---------------------------------------------------------------------------
+Packet 9
+TIME:	10:41:34.145523 (0.005970)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=108 id=0691
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CC8
+ TCP:	port 21 -> 1479 seq=4259781178 ack=1449154514
+	hlen=20 (data=68) UAPRSF=011000 wnd=17520 cksum=9D1F urg=0
+DATA:	331 Guest login ok, send your complete e-m
+	<*** Rest of data missing from packet dump ***>
+---------------------------------------------------------------------------
+Packet 10
+TIME:	10:41:34.238418 (0.092895)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=40 id=597B
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C921
+ TCP:	port 1479 -> 21 seq=1449154514 ack=4259781246
+	hlen=20 (data=0) UAPRSF=010000 wnd=17520 cksum=86CC urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 11
+TIME:	10:41:35.897826 (1.659408)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=51 id=597C
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C915
+ TCP:	port 1479 -> 21 seq=1449154514 ack=4259781246
+	hlen=20 (data=11) UAPRSF=011000 wnd=17520 cksum=0D2C urg=0
+DATA:	PASS wkt@.
+	
+---------------------------------------------------------------------------
+Packet 12
+TIME:	10:41:35.909508 (0.011682)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=88 id=0693
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CDA
+ TCP:	port 21 -> 1479 seq=4259781246 ack=1449154525
+	hlen=20 (data=48) UAPRSF=011000 wnd=17520 cksum=DAA2 urg=0
+DATA:	230 Guest login ok, access restrictions ap
+	<*** Rest of data missing from packet dump ***>
+---------------------------------------------------------------------------
+Packet 13
+TIME:	10:41:35.910983 (0.001475)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=46 id=597D
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C919
+ TCP:	port 1479 -> 21 seq=1449154525 ack=4259781294
+	hlen=20 (data=6) UAPRSF=011000 wnd=17520 cksum=D2CB urg=0
+DATA:	SYST.
+	
+---------------------------------------------------------------------------
+Packet 14
+TIME:	10:41:35.913763 (0.002780)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=79 id=0694
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CE2
+ TCP:	port 21 -> 1479 seq=4259781294 ack=1449154531
+	hlen=20 (data=39) UAPRSF=011000 wnd=17520 cksum=3948 urg=0
+DATA:	215 UNIX Type: L8 Version: BSD-199506.
+	
+---------------------------------------------------------------------------
+Packet 15
+TIME:	10:41:36.008478 (0.094715)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=40 id=597E
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C91E
+ TCP:	port 1479 -> 21 seq=1449154531 ack=4259781333
+	hlen=20 (data=0) UAPRSF=010000 wnd=17520 cksum=8664 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 16
+TIME:	10:41:38.459190 (2.450712)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=46 id=597F
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C917
+ TCP:	port 1479 -> 21 seq=1449154531 ack=4259781333
+	hlen=20 (data=6) UAPRSF=011000 wnd=17520 cksum=E0A5 urg=0
+DATA:	EPSV.
+	
+---------------------------------------------------------------------------
+Packet 17
+TIME:	10:41:38.461539 (0.002349)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=77 id=0696
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CE2
+ TCP:	port 21 -> 1479 seq=4259781333 ack=1449154537
+	hlen=20 (data=37) UAPRSF=011000 wnd=17520 cksum=37DD urg=0
+DATA:	500 'EPSV': command not understood..
+	
+---------------------------------------------------------------------------
+Packet 18
+TIME:	10:41:38.461702 (0.000163)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=46 id=5980
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C916
+ TCP:	port 1479 -> 21 seq=1449154537 ack=4259781370
+	hlen=20 (data=6) UAPRSF=011000 wnd=17520 cksum=D589 urg=0
+DATA:	PASV.
+	
+---------------------------------------------------------------------------
+Packet 19
+TIME:	10:41:38.480430 (0.018728)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=91 id=0697
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CD3
+ TCP:	port 21 -> 1479 seq=4259781370 ack=1449154543
+	hlen=20 (data=51) UAPRSF=011000 wnd=17520 cksum=EA56 urg=0
+DATA:	227 Entering Passive Mode (131,245,7,145,1
+	<*** Rest of data missing from packet dump ***>
+---------------------------------------------------------------------------
+Packet 20
+TIME:	10:41:38.481923 (0.001493)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=49 id=5983
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C910
+ TCP:	port 1479 -> 21 seq=1449154543 ack=4259781421
+	hlen=20 (data=9) UAPRSF=011000 wnd=17520 cksum=7917 urg=0
+DATA:	LIST -C.
+	
+---------------------------------------------------------------------------
+Packet 21
+TIME:	10:41:38.492052 (0.010129)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=93 id=0699
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CCF
+ TCP:	port 21 -> 1479 seq=4259781421 ack=1449154552
+	hlen=20 (data=53) UAPRSF=011000 wnd=17520 cksum=DC32 urg=0
+DATA:	150 Opening ASCII mode data connection for
+	<*** Rest of data missing from packet dump ***>
+---------------------------------------------------------------------------
+Packet 22
+TIME:	10:41:38.588467 (0.096415)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=40 id=5986
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C916
+ TCP:	port 1479 -> 21 seq=1449154552 ack=4259781474
+	hlen=20 (data=0) UAPRSF=010000 wnd=17520 cksum=85C2 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 23
+TIME:	10:41:38.589337 (0.000870)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=64 id=069D
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CE8
+ TCP:	port 21 -> 1479 seq=4259781474 ack=1449154552
+	hlen=20 (data=24) UAPRSF=011000 wnd=17520 cksum=B6AC urg=0
+DATA:	226 Transfer complete..
+	
+---------------------------------------------------------------------------
+Packet 24
+TIME:	10:41:38.688499 (0.099162)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=40 id=5987
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C915
+ TCP:	port 1479 -> 21 seq=1449154552 ack=4259781498
+	hlen=20 (data=0) UAPRSF=010000 wnd=17520 cksum=85AA urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 25
+TIME:	10:41:40.925564 (2.237065)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=48 id=5988
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C90C
+ TCP:	port 1479 -> 21 seq=1449154552 ack=4259781498
+	hlen=20 (data=8) UAPRSF=011000 wnd=17520 cksum=B3A8 urg=0
+DATA:	TYPE I.
+	
+---------------------------------------------------------------------------
+Packet 26
+TIME:	10:41:40.928039 (0.002475)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=60 id=069E
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CEB
+ TCP:	port 21 -> 1479 seq=4259781498 ack=1449154560
+	hlen=20 (data=20) UAPRSF=011000 wnd=17520 cksum=F2A2 urg=0
+DATA:	200 Type set to I..
+	
+---------------------------------------------------------------------------
+Packet 27
+TIME:	10:41:40.928211 (0.000172)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=53 id=5989
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C906
+ TCP:	port 1479 -> 21 seq=1449154560 ack=4259781518
+	hlen=20 (data=13) UAPRSF=011000 wnd=17520 cksum=DEFC urg=0
+DATA:	SIZE README.
+	
+---------------------------------------------------------------------------
+Packet 28
+TIME:	10:41:40.930912 (0.002701)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=50 id=069F
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CF4
+ TCP:	port 21 -> 1479 seq=4259781518 ack=1449154573
+	hlen=20 (data=10) UAPRSF=011000 wnd=17520 cksum=ABA3 urg=0
+DATA:	213 1769.
+	
+---------------------------------------------------------------------------
+Packet 29
+TIME:	10:41:40.931025 (0.000113)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=46 id=598A
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C90C
+ TCP:	port 1479 -> 21 seq=1449154573 ack=4259781528
+	hlen=20 (data=6) UAPRSF=011000 wnd=17520 cksum=D4C7 urg=0
+DATA:	PASV.
+	
+---------------------------------------------------------------------------
+Packet 30
+TIME:	10:41:40.949162 (0.018137)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=91 id=06A0
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CCA
+ TCP:	port 21 -> 1479 seq=4259781528 ack=1449154579
+	hlen=20 (data=51) UAPRSF=011000 wnd=17520 cksum=E89A urg=0
+DATA:	227 Entering Passive Mode (131,245,7,145,1
+	<*** Rest of data missing from packet dump ***>
+---------------------------------------------------------------------------
+Packet 31
+TIME:	10:41:40.950921 (0.001759)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=53 id=598D
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C902
+ TCP:	port 1479 -> 21 seq=1449154579 ack=4259781579
+	hlen=20 (data=13) UAPRSF=011000 wnd=17520 cksum=E5A3 urg=0
+DATA:	RETR README.
+	
+---------------------------------------------------------------------------
+Packet 32
+TIME:	10:41:40.955019 (0.004098)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=106 id=06A2
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CB9
+ TCP:	port 21 -> 1479 seq=4259781579 ack=1449154592
+	hlen=20 (data=66) UAPRSF=011000 wnd=17520 cksum=3DD7 urg=0
+DATA:	150 Opening BINARY mode data connection fo
+	<*** Rest of data missing from packet dump ***>
+---------------------------------------------------------------------------
+Packet 33
+TIME:	10:41:41.048503 (0.093484)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=40 id=5991
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C90B
+ TCP:	port 1479 -> 21 seq=1449154592 ack=4259781645
+	hlen=20 (data=0) UAPRSF=010000 wnd=17520 cksum=84EF urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 34
+TIME:	10:41:41.049514 (0.001011)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=64 id=06A7
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CDE
+ TCP:	port 21 -> 1479 seq=4259781645 ack=1449154592
+	hlen=20 (data=24) UAPRSF=011000 wnd=17520 cksum=B5D9 urg=0
+DATA:	226 Transfer complete..
+	
+---------------------------------------------------------------------------
+Packet 35
+TIME:	10:41:41.049875 (0.000361)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=53 id=5992
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C8FD
+ TCP:	port 1479 -> 21 seq=1449154592 ack=4259781669
+	hlen=20 (data=13) UAPRSF=011000 wnd=17520 cksum=EA42 urg=0
+DATA:	MDTM README.
+	
+---------------------------------------------------------------------------
+Packet 36
+TIME:	10:41:41.052930 (0.003055)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=60 id=06A8
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CE1
+ TCP:	port 21 -> 1479 seq=4259781669 ack=1449154605
+	hlen=20 (data=20) UAPRSF=011000 wnd=17520 cksum=B8EB urg=0
+DATA:	213 20010504031257.
+	
+---------------------------------------------------------------------------
+Packet 37
+TIME:	10:41:41.148531 (0.095601)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=40 id=5993
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C909
+ TCP:	port 1479 -> 21 seq=1449154605 ack=4259781689
+	hlen=20 (data=0) UAPRSF=010000 wnd=17520 cksum=84B6 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 38
+TIME:	10:41:42.077465 (0.928934)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=46 id=5994
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C902
+ TCP:	port 1479 -> 21 seq=1449154605 ack=4259781689
+	hlen=20 (data=6) UAPRSF=011000 wnd=17520 cksum=DCF4 urg=0
+DATA:	QUIT.
+	
+---------------------------------------------------------------------------
+Packet 39
+TIME:	10:41:42.080038 (0.002573)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=89 id=06A9
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CC3
+ TCP:	port 21 -> 1479 seq=4259781689 ack=1449154611
+	hlen=20 (data=49) UAPRSF=011000 wnd=17520 cksum=A8C2 urg=0
+DATA:	221-You have transferred 1769 bytes in 1 f
+	<*** Rest of data missing from packet dump ***>
+---------------------------------------------------------------------------
+Packet 40
+TIME:	10:41:42.083420 (0.003382)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=173 id=06AA
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1C6E
+ TCP:	port 21 -> 1479 seq=4259781738 ack=1449154611
+	hlen=20 (data=133) UAPRSF=011001 wnd=17520 cksum=9D53 urg=0
+DATA:	221-Total traffic for this session was 286
+	<*** Rest of data missing from packet dump ***>
+---------------------------------------------------------------------------
+Packet 41
+TIME:	10:41:42.083697 (0.000277)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=40 id=5995
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C907
+ TCP:	port 1479 -> 21 seq=1449154611 ack=4259781872
+	hlen=20 (data=0) UAPRSF=010000 wnd=17387 cksum=847E urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 42
+TIME:	10:41:42.083790 (0.000093)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	131.244.8.169 -> 131.245.7.145 hlen=20 TOS=10 dgramlen=40 id=5996
+	MF/DF=0/1 frag=0 TTL=64 proto=TCP cksum=C906
+ TCP:	port 1479 -> 21 seq=1449154611 ack=4259781872
+	hlen=20 (data=0) UAPRSF=010001 wnd=17520 cksum=83F8 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------
+Packet 43
+TIME:	10:41:42.084740 (0.000950)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	131.245.7.145 -> 131.244.8.169 hlen=20 TOS=10 dgramlen=40 id=06AB
+	MF/DF=0/1 frag=0 TTL=63 proto=TCP cksum=1CF2
+ TCP:	port 21 -> 1479 seq=4259781872 ack=1449154612
+	hlen=20 (data=0) UAPRSF=010000 wnd=17520 cksum=83F8 urg=0
+DATA:	<No data>
+---------------------------------------------------------------------------

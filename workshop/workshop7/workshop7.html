@@ -1,0 +1,132 @@
+<html><head>
+ <title>Clarification of DNS Reverse Lookup, Telnet as Service Discovery Tool, Mail Protocols</title>
+	<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+.STYLE1 {
+	font-size: 16px;
+	color: #000000;
+	font-weight: bold;
+}
+.STYLE2 {
+	font-size: 14px;
+	color: #000000;
+}
+.STYLE7 {font-size: 14px}
+.STYLE8 {color: #000000}
+-->
+    </style>
+</head><body>
+<h1>Workshop 5:</h1>
+<h1>DNS及逆向解析，E-mail</h1>
+<h3><a name="dns">1：域名系统(DNS)</a></h3>
+<p> 因特网网络协议（IP）使用32位的 <b>IP 地址</b> 来识别网络中的计算机（更加准确的说，IP地址用于识别计算机的一个网络接口，如果一个计算机有多个网络接口，那么这个计算机就会拥有多个地址，这在服务器中很常见）。因为人们发现记住名字比记住数字要容易的多，所以我们就赋予了计算机相应的名字（如果这台机器提供几种不同的服务，那么它可能有若干个名字）。现在需要做的就是将这些名字和实际使用的IP地址进行映射，这就是域名系统--一个联机分布式数据库系统。任何一个网络程序在接收到一个DNS名字的时候就必须去查询DNS服务，来将域名转化成IP地址并提供给网络接口。系统会将这些查询请求发送给距请求站点最近的域名服务器（对于UNIX系统而言，这个（这些）域名服务器已经在/etc/resolv.conf文件中配置完成）。进而域名服务器可以将请求发送给适合的服务器来寻找答案，成功查找到映射关系后这个域名服务器会将这个映射缓存下来，以防止其他计算机也需要解析这个域名。</p>
+<p> DNS 域名具有层次结构，将名字划分成域，域又可以划分成子域。比如 ss.pku.edu.cn 定义了ss域在 <em>pku</em> 域中，而pku域又在 <em>edu</em> 域中，最后在 <em>cn</em> 域（这是顶级域）中。这通常映射到系统的逻辑位置。在同一个域中的所有名字通常因某种原因而相关（最常见的关联是，它们都在在同一个网络中，但是要记住并不总是这样）。</p>
+<p> 关于一个域（比如pku.edu.cn）中的所有信息都被存储在名为域名服务器的计算机中。这些信息包括在哪去寻找任何子域的域名服务器（比如，为了解析域名pku.edu.cn，edu.cn域会告诉我们去某某域名服务器进行查找）。所以，从DNS树的顶层开始向下查询，任何域名都会被解析成功的。最上层的域名服务器称为根域名服务器，这些根域名服务器的地址会手动的配置在世界各地的域名服务器中。</p>
+<h3>2：Email和相关服务</h3>
+<p></p>
+<form id="aspnetForm" method="post" name="aspnetForm" action="http://technet.microsoft.com/en-us/library/cc782449(WS.10).aspx">
+	  <div id="contents">
+			<div id="ctl00_LibFrame" class="resizableArea">
+				<div id="ctl00_raRight" class="rightSection">
+					<div class="RightPanel">
+						<div class="ContentArea">
+							<div>
+								<div class="topic">
+									<div id="mainSection">
+										<div id="mainBody">
+											<h4 class="heading">2.1 POP3 服务简介</h4>
+											<div id="sectionSection0" class="section">
+												POP3 服务用于接收电子邮件。管理员可以使用POP3服务来存储和管理在邮件服务器上的邮箱账户。
+												  <p>当POP3服务在邮件服务器上安装成功，用户通过使用支持POP3协议的邮件客户端（比如Microsoft 
+										  Outlook）可以连接邮件服务器并且将邮件存储到本地计算机。POP3和SMTP一起使用，可以发送离线邮件。										  </div>
+											<h4 class="heading">2.2 E-mail 发送和接收简介</h4>
+											<div id="sectionSection1" class="section">
+												<img alt="How e-mail moves from sender to recipient" src="how email works.gif"> 
+
+												<p>这张图片展示了e-mail是如何从发送端传输到接收端的，以及邮件是如何被接收到本地计算机的。</p>
+												<p>发送端的计算机通过因特网服务提供商（ISP）连接到因特网。使用邮件客户端，发送端发送一封邮件。SMTP将邮件发送给邮件发送者的ISP，然后e-mail被传输到因特网上。</p>
+												<p>这封e-mail通过在它传输路径上的很多个中间媒介到达接收端。当到达了接收端的ISP， 邮件被放置到了接收端的邮箱内。</p>
+											<p>当接收端的计算机连接到ISP，根据POP3协议，这封邮件就会从ISP传输到接收端本地的邮件客户端。POP3允许用户从邮件服务器中接收它们的邮件。											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+  </div>
+</form>
+<p>
+POP3是基于TCP的协议，像SMTP一样是基于文本，非常简单。POP3默认的服务端口是110。</p>
+
+  <p>
+    如果你想了解POP3的更多信息, 可以查看 <a href="http://www.faqs.org/rfcs/rfc1939.html">POP3 standard</a> - 其中的内容并不冗长复杂。  </p>
+  
+  <h4>2.3 IMAP4</h4>
+  
+  <p>
+    IMAP协议是除POP3外非常好的选择，其功能强大很多，但是也复杂很多。你可以通过
+	<a href="http://networking.ringofsaturn.com/Protocols/imap.php">overview of 
+	the IMAP</a> 来首先了解一下IMAP的大概内容。和上面的POP3标准相比， <a href="http://www.faqs.org/rfcs/rfc2060.html">IMAP standard</a> 的内容就要多很多同时也不是那么简单。</p>
+  
+  <p>
+<h3>3：作业: 选择题(单选或多选)</h3>
+  <p>1．在Internet上浏览时，浏览器和WWW服务器之间传输网页使用的协议是（??? ）。 <br>
+    A.IP<br>
+    B.HTTP<br>
+    C.FTP<br>
+    D.Telnet</p>
+  <p>2．电子邮件相关协议主要有（???? ） <br>
+    A. SMTP<br>
+    B. POP3<br>
+    C. IMAP4<br>
+    D. Email</p>
+  <p>3．电子邮件服务器之间相互传递邮件通常是使用（?? ）协议。 <br>
+    A. SMTP<br>
+    B. POP3<br>
+    C. IMAP4<br>
+    D. Email</p>
+  <p>4．电子邮件邮箱读取协议包括（??? ）。 <br>
+    A. SMTP<br>
+    B. POP3<br>
+    C. IMAP4<br>
+    D. Email</p>
+  <p>5．以下哪个网址不符合WWW网址的书写规则。（??? ） <br>
+    A. www.888.org.cn<br>
+    B. www.sina.com<br>
+    C. www.abc.net.uk<br>
+    D. www.mk.cn.edu</p>
+  <p>6．电子邮件应用程序利用POP3协议（??? ）。 <br>
+    A. 创建邮件 <br>
+    B. 发送邮件 <br>
+    C. 接收邮件 <br>
+    D. 加密邮件 </p>
+  <p>7．下面对应用层协议说法正确的有（???? ） <br>
+    A. DNS协议支持域名解析服务，其服务端口号为80。 <br>
+    B. Email系统中发送邮件和接收邮件均采用SMTP协议。 <br>
+    C. WWW应用中浏览器和WWW服务器之间的通信协议是HTTP协议。 <br>
+    D. WWW应用服务端口号为80。 </p>
+  <p>8．WWW采用的是（?????? ）工作模式。 <br>
+    A. C/S<br>
+    B. P2P<br>
+    C. B/S<br>
+    D. 以上都不是 </p>
+  <p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal STYLE1" style="text-indent: -18.0pt; margin-left: 18.0pt">4：作业: 问答</p>
+<p class="MsoNormal STYLE2" style="text-indent: -18.0pt; margin-left: 18.0pt">（1）用foxmail或outlook，建立邮箱账号，实现整个收发配置操作，并完成一次邮件发送和接收。学院和新浪邮箱&#13;</p>
+<p class="STYLE7"> 要求：1）以邮件协议为依据，说明每一步配置操作的意图；2）截图以证明整个过程.</p>
+<p class="STYLE7">（2）<span class="STYLE8">一名学生希望访问百度网站，学生在其浏览器中输入：http://www.baidu.com 并按回车，直到百度网站首页显示在浏览器中，请问在此过程中，按照Internet参考模型，从应用层（包括应用层）到网络层（包括网络层），都用到了哪些协议？每个协议所起的作用是什么？</span></p>
+<p>（3）P297, 6-10</p>
+<p>（4）P298, 6-46 </p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">&nbsp;  </p>
+<p class="MsoNormal" style="text-indent: -18.0pt; margin-left: 18.0pt">&nbsp;</p>
+</body>
+</html> 

@@ -1,0 +1,82 @@
+---------------------------------------------------------------------------
+Packet 1
+TIME:	10:49:15.567023
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> kirk hlen=20 TOS=00 dgramlen=57 id=5A1B
+	MF/DF=0/0 frag=0 TTL=64 proto=UDP cksum=0F07
+ UDP:	port 1887 -> 53 hdr=8 data=29
+DATA:	.............www.ibm.com.....
+---------------------------------------------------------------------------
+Packet 2
+TIME:	10:49:15.624433 (0.057410)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	kirk -> henry hlen=20 TOS=00 dgramlen=332 id=7A31
+	MF/DF=0/1 frag=0 TTL=254 proto=UDP cksum=EFDC
+ UDP:	port 53 -> 1887 hdr=8 data=304
+DATA:	.............www.ibm.com..................*.c.............*.
+	c.............*.c.............*.c.............INTERNET-SERVE
+	R.ZURICH...............NS.WATSON.............	.NS.ERS.......
+	........NS.ALMADEN...............NS.AUSTIN...i......\D....w.
+	........\U...Q.................#..............S#............
+	.#."
+---------------------------------------------------------------------------
+Packet 3
+TIME:	10:49:21.715074 (6.090641)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> kirk hlen=20 TOS=00 dgramlen=57 id=5A1D
+	MF/DF=0/0 frag=0 TTL=64 proto=UDP cksum=0F05
+ UDP:	port 1888 -> 53 hdr=8 data=29
+DATA:	.............hotmail.com.....
+---------------------------------------------------------------------------
+Packet 4
+TIME:	10:49:21.767823 (0.052749)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	kirk -> henry hlen=20 TOS=00 dgramlen=273 id=7A32
+	MF/DF=0/1 frag=0 TTL=254 proto=UDP cksum=F016
+ UDP:	port 53 -> 1888 hdr=8 data=245
+DATA:	.............hotmail.com.............	H. .ns1...dns..wFc...p
+	......	:..................).............ns2...............ns
+	3...............ns4...............ns1.jsnet...)......V	.....
+	..c.......d.......u......E......D.........8..@..............
+	...q.
+---------------------------------------------------------------------------
+Packet 5
+TIME:	10:49:41.633352 (19.865529)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> kirk hlen=20 TOS=00 dgramlen=71 id=5A47
+	MF/DF=0/0 frag=0 TTL=64 proto=UDP cksum=0ECD
+ UDP:	port 1889 -> 53 hdr=8 data=43
+DATA:	.............11.24.37.130.in-addr.arpa.....
+---------------------------------------------------------------------------
+Packet 6
+TIME:	10:49:42.222305 (0.588953)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	kirk -> henry hlen=20 TOS=00 dgramlen=220 id=7A33
+	MF/DF=0/1 frag=0 TTL=254 proto=UDP cksum=F04A
+ UDP:	port 53 -> 1889 hdr=8 data=192
+DATA:	.............11.24.37.130.in-addr.arpa.............Q....soli
+	ng.cs.vu.nl.........Q....top.>........Q....solo.>........Q..
+	..star.>.T......Q......+.f......Q....%...y......Q......*.y..
+	....Q....%..
+---------------------------------------------------------------------------
+Packet 7
+TIME:	10:49:52.437625 (10.215320)
+LINK:	00:B0:D0:D3:D3:AD -> 00:00:0C:07:AC:00 type=IP
+  IP:	henry -> kirk hlen=20 TOS=00 dgramlen=57 id=5A48
+	MF/DF=0/0 frag=0 TTL=64 proto=UDP cksum=0EDA
+ UDP:	port 1890 -> 53 hdr=8 data=29
+DATA:	.............bond.edu.au.....
+---------------------------------------------------------------------------
+Packet 8
+TIME:	10:49:52.442459 (0.004834)
+LINK:	00:30:7B:95:E9:A0 -> 00:B0:D0:D3:D3:AD type=IP
+  IP:	kirk -> henry hlen=20 TOS=00 dgramlen=224 id=7A34
+	MF/DF=0/1 frag=0 TTL=254 proto=UDP cksum=F045
+ UDP:	port 53 -> 1890 hdr=8 data=196
+DATA:	.............bond.edu.au.............Q..
+	.
+	.moray..........Q....kirk..........Q....minerva.its.........
+	.Q....diablo.onthenet.com.au..+......Q........?......Q......
+	..R......Q........l......P....
+	Y.
+---------------------------------------------------------------------------
